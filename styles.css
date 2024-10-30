@@ -61,11 +61,12 @@ h6 {
 
 body {
   position: relative;
+  min-height: 100dvh;
   font-family: "Poppins", sans-serif;
   background-color: var(--Very-Light-Gray);
   color: var(--Very-Dark-Blue);
   font-size: 15px;
-  min-height: 100dvh;
+  height: auto;
 }
 
 header {
@@ -74,41 +75,24 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 3em 0 2em;
+  padding: 2em 0 1em;
   text-align: center;
 }
 
 main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
-
-section {
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: fit-content;
-  height: 100%;
+  height: auto;
 }
 
-@media screen and (max-width: 500px) {
-  section {
-    flex-direction: column;
-  }
-}
 div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
 }
 
 article {
@@ -116,13 +100,13 @@ article {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 300px;
+  width: 30vw;
+  max-width: 400px;
   padding: 1.5em;
   border-radius: 5px;
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
   margin: 2em;
-  gap: 1em;
+  gap: 2em;
 }
 
 figure {
@@ -182,16 +166,19 @@ p {
 }
 
 /* Footer */
-.attribution {
+footer {
   position: absolute;
   width: 100%;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1rem;
   text-align: center;
-  color: var(--Grayish-Blue);
-  margin-bottom: 0.5em;
+  padding: 0.5em 0;
+  margin-top: 1em;
+}
+.attribution {
+  font-size: 1rem;
+
 }
 .attribution a {
   display: inline-block;
@@ -205,3 +192,16 @@ p {
     cursor: pointer;
   }
 }
+
+  @media screen and (max-width: 600px) {
+    main {
+      flex-direction: column;
+    }
+  
+    article {
+      width: 300px;
+    }
+    main{
+      padding-bottom: 3em;
+    }
+  }
